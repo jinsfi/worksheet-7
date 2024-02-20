@@ -1,0 +1,28 @@
+3) b. The worst-case time complexity of the firstBinarySearch function is O(log n). This is because binary search operates by halving the search space at each step, leading to a logarithmic time complexity.
+
+c. The worst-case memory complexity of the firstBinarySearch function is O(1). This is because the function only uses a constant amount of additional memory regardless of the size of the input array.
+
+4) b. The worst-case time complexity of the tail-recursive function recurBinarySearch is still O(log n). Although it is tail-recursive, the behavior of binary search remains the same, halving the search space at each step, leading to logarithmic time complexity.
+
+c. The worst-case memory complexity of the tail-recursive function recurBinarySearch is O(log n), assuming tail-recursion optimization on the stack. In tail recursion, the compiler optimizes recursive calls by reusing the same stack frame for each recursive call, effectively reducing the space complexity to O(1) for each recursive call. However, since there could be log n recursive calls in the worst case (each call divides the search space in half), the overall memory complexity remains O(log n).
+
+Challenge : 
+
+1. The runtime complexity (big-O) of both push() and pop() methods in the provided implementation of MyStack is O(1) on average, assuming efficient linked list operations with constant time access to the tail element.
+
+2. The runtime complexity (big-O) of both push() and pop() methods in the provided implementation of MyQueue is O(1) on average. This is because both methods rely on linked list operations with constant time access to the head or tail of the list.
+
+3.
+a. If we used an ArrayList instead of a LinkedList for MyStack, the implementation of push() would involve appending the new element to the end of the ArrayList, which can be done in constant time on average (amortized O(1)). This is because ArrayLists have a dynamic array data structure, so adding an element at the end typically involves resizing the array only occasionally. Therefore, the complexity of push() with ArrayList would be O(1).
+
+b. With an ArrayList implementation for MyStack, pop() would involve removing the last element from the ArrayList, which also has a time complexity of O(1) on average (amortized O(1)). This is because removing the last element from an ArrayList does not require shifting elements, unlike removing from the middle. Therefore, the complexity of pop() with ArrayList would be O(1).
+
+c. If we used an ArrayList for MyQueue, the implementation of push() would still involve appending the new element to the end of the ArrayList, similar to the MyStack implementation. Therefore, the complexity of push() with ArrayList for MyQueue would also be O(1).
+
+d. For pop() with an ArrayList implementation for MyQueue, removing the first element would require shifting all remaining elements to the left to fill the gap, resulting in a time complexity of O(n), where n is the number of elements in the ArrayList. This is because removing an element from the beginning of an ArrayList requires shifting all subsequent elements by one position. Therefore, the complexity of pop() with ArrayList for MyQueue would be O(n).
+
+4. LinkedLists offer better dynamic size adjustment, efficient insertion and deletion operations, no need for resizing, no wasted space, and flexibility in memory allocation compared to ArrayLists, making them a more suitable choice for implementing MyStack and MyQueue.
+
+5. The worst-case time complexity of the provided binary search function is O(log n), where n is the number of elements in the ArrayList. This is because in each iteration of the while loop, the size of the search space is effectively halved by adjusting the high and low indices based on the comparison with the target element. This halving process continues until either the target element is found or the search space is reduced to zero. Hence, the algorithm exhibits logarithmic time complexity.
+
+6. The worst-case time complexity of the provided binary search function working on a LinkedList is O(n). Unlike arrays or ArrayLists, LinkedLists do not support constant-time random access to elements by index. Traversing to the middle element (finding the element at index mid) requires iterating through the list either from the head or the tail, which takes O(n/2) time on average. Although binary search algorithm theoretically halves the search space with each iteration, the linear time required to access the middle element in a LinkedList dominates the overall time complexity, resulting in a worst-case scenario where the time complexity is O(n).
